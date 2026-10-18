@@ -1,0 +1,366 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0x93b37D58dFAAde61E562BADa7E03Cd9A3bF7e772",
+  "explorer": "https://explorer-studio.genlayer.com/address/0x93b37D58dFAAde61E562BADa7E03Cd9A3bF7e772",
+  "source_sha256": "ef4ee78e413f09e9a4b839aa2f36943b149db111bec2c167d97e49aebdca16e6",
+  "constructor": {},
+  "deployer": "0xBDF7a077F012d4A6e9a42aEf5b66cD626EE23Fda",
+  "steps": [
+    {
+      "step": "deploy",
+      "method": "deploy",
+      "from": "0xBDF7a077F012d4A6e9a42aEf5b66cD626EE23Fda",
+      "tx": "0x4961b4d26e838bc50424bca913ff8cb9ea68e83df23b0e5a96ad8f9965656bee",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": "",
+      "address": "0x93b37D58dFAAde61E562BADa7E03Cd9A3bF7e772"
+    },
+    {
+      "step": "show 0: Hollow Pines, 0.05 GEN a ticket",
+      "method": "create",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0x24ba77b727aaf699e0de1119419c4dd42b2cb7b15791d5f3776dd12e862c7dec",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "show 1: Mira Kaye, 0.08 GEN a ticket",
+      "method": "create",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0x99602206e4a5ce12d3729b5bfcf211ccf95ac943bf1d2d2f751bbe7d51736296",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "show 2: Quiet Harbour, 0.03 GEN a ticket",
+      "method": "create",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0x909afbc53a961c16ed128289bc66600810c6db7f5f8caee06378f29342db8be4",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "the organiser buys a ticket to its own show",
+      "method": "buy",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0xba579958efd2eeb21c955c633826f7fd9acd00f4f49a10ffefd1f08b77990418",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] the organiser cannot buy a ticket to its own show"
+    },
+    {
+      "step": "Ann buys a ticket to Hollow Pines",
+      "method": "buy",
+      "from": "0x36aF507309e99D9f9E0920A59270d7AF04bd35Cb",
+      "tx": "0x09502c3a548820d13ceb84234ee03034acbbf0947a5c39e66661a4ad6cab9cf5",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Ben buys a ticket to Hollow Pines",
+      "method": "buy",
+      "from": "0xb94d81549E22a21Adbc6E9422dB863caaFE1bFd3",
+      "tx": "0xb2609ef6ab767f37988d4e81430260f01c362114e0b8265d145536d77ce5fdf2",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Ann buys a second ticket",
+      "method": "buy",
+      "from": "0x36aF507309e99D9f9E0920A59270d7AF04bd35Cb",
+      "tx": "0xed704bf028b0b2ca89b41a94289a87e2a02b782f575adbfdb2d3e0b4c805e4ec",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] one ticket per fan"
+    },
+    {
+      "step": "Cal pays the wrong price for Mira Kaye",
+      "method": "buy",
+      "from": "0xE901774cCF65a921a10beD0C7564f24CCf93cCaf",
+      "tx": "0x65cef1c7f10208655aa2a469dc95bfab0f74071fdcfa4c0872d07285ce05f0d0",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] pay the price exactly: 80000000000000000 wei, not 50000000000000000"
+    },
+    {
+      "step": "Cal buys a ticket to Mira Kaye",
+      "method": "buy",
+      "from": "0xE901774cCF65a921a10beD0C7564f24CCf93cCaf",
+      "tx": "0x8466d36cab5e3013890a856488c62d4bb6c3a4b0e1cb3c37995a691641f9133a",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Dev buys a ticket to Mira Kaye",
+      "method": "buy",
+      "from": "0x91Ea46ECd2f5959C18a33B5aa1ba2d4C87997e8E",
+      "tx": "0x00169d29604bc1f1cb3b08d7e6ff965b5e5f473a5156ae47f2e25002eab40377",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Eve buys a ticket to Quiet Harbour",
+      "method": "buy",
+      "from": "0x6257A5588C3f11a6Cf3d5fA1845A6341Bf1d9039",
+      "tx": "0xc4cc379ce1e57412ec44545f47dac68a2854dff9b6ebb0026cffcab87efb6b44",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "a stranger announces a change",
+      "method": "announce",
+      "from": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047",
+      "tx": "0x152c693810563764d83e4d87c37d5cca426e30cca5fee5d264650923fea55850",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] only the organiser may announce a change"
+    },
+    {
+      "step": "Hollow Pines: a stand-in drummer, doors at 7.30",
+      "method": "announce",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0x5a9b7f411c5785c084c5f4a03ccd0907df46256032b31ea8fe13a7dd0dcb7530",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Mira Kaye: cancelled, a DJ set instead",
+      "method": "announce",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0x4525a19f463ffee90ed060ea944464ea5a618717eaaeaae935622ef05792f085",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Quiet Harbour: a different venue",
+      "method": "announce",
+      "from": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "tx": "0xbbbcc22dd02ec42a4cae2db12c8aa7ebcbdcddb79bc0ed7f01611f4084784f78",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "a stranger asks for a ruling",
+      "method": "rule",
+      "from": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047",
+      "tx": "0x7bca996183904eb143560ad5135c119948fe7515117d5951b41efae3e4a9c409",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] only the organiser or a ticket holder may ask for a ruling"
+    },
+    {
+      "step": "Hollow Pines ruled: both orders",
+      "method": "rule",
+      "from": "0x36aF507309e99D9f9E0920A59270d7AF04bd35Cb",
+      "tx": "0x2975775cbaea3dfcc4af137644c19f1098b7a9af5bc0ced38104555e4ff40128",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Mira Kaye ruled: both orders",
+      "method": "rule",
+      "from": "0xE901774cCF65a921a10beD0C7564f24CCf93cCaf",
+      "tx": "0x2583ccfcd56718ab0f12d25f445f584789a9d65685b6ec1264f3e6f08af9598e",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Hollow Pines settled before the show",
+      "method": "settle",
+      "from": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047",
+      "tx": "0x2c6408c215f0fef59468da9c67152f27624a2605aacec8328b3e37cc911b07c4",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] the organiser is paid once the show starts at 2026-10-18T22:56:41Z"
+    },
+    {
+      "step": "Quiet Harbour settled while it may be ruled",
+      "method": "settle",
+      "from": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047",
+      "tx": "0xe08d760ecae84d27911aa440a9829e5ef9096556b4decf05b8b234705cb165eb",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] the change may be ruled until 2026-10-18T22:49:31Z"
+    },
+    {
+      "step": "Quiet Harbour ruled after rulings closed",
+      "method": "rule",
+      "from": "0x6257A5588C3f11a6Cf3d5fA1845A6341Bf1d9039",
+      "tx": "0x852f7157660848b9414de4c447cead11909e21ebed7951d8a6e16cf5fa30855b",
+      "status": "ACCEPTED",
+      "ok": false,
+      "refusal": "[EXPECTED] rulings closed at 2026-10-18T22:49:31Z; an unruled change refunds every holder at settlement"
+    },
+    {
+      "step": "Quiet Harbour settled: unruled, refunded",
+      "method": "settle",
+      "from": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047",
+      "tx": "0xd71d8a52e2142e129dcef5ae8c1dbc77701da9a59bca2e6848dab24acaedc551",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    },
+    {
+      "step": "Hollow Pines settled: the organiser paid",
+      "method": "settle",
+      "from": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047",
+      "tx": "0x7793e069ddc974f8f098134acf3f6d5e23955bb8664234b247be7d43fc8b9a8e",
+      "status": "ACCEPTED",
+      "ok": true,
+      "refusal": ""
+    }
+  ],
+  "accounts": {
+    "deployer": "0xBDF7a077F012d4A6e9a42aEf5b66cD626EE23Fda",
+    "organiser": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+    "ann": "0x36aF507309e99D9f9E0920A59270d7AF04bd35Cb",
+    "ben": "0xb94d81549E22a21Adbc6E9422dB863caaFE1bFd3",
+    "cal": "0xE901774cCF65a921a10beD0C7564f24CCf93cCaf",
+    "dev": "0x91Ea46ECd2f5959C18a33B5aa1ba2d4C87997e8E",
+    "eve": "0x6257A5588C3f11a6Cf3d5fA1845A6341Bf1d9039",
+    "stranger": "0xBf191926F20D87880FCdD63ed84f76A2a1c55047"
+  },
+  "shows": [
+    {
+      "announced_at": "2026-10-18T22:34:09Z",
+      "capacity": 5,
+      "change": "Hollow Pines' drummer is ill, so a stand-in drummer will play the set with the band, and doors now open at 7.30 pm instead of 7 pm.",
+      "created_at": "2026-10-18T22:31:41Z",
+      "description": "Hollow Pines play a full headline set at the Brudenell Social Club, Leeds, with support from Ana Silva. Doors open at 7 pm.",
+      "id": 0,
+      "organiser": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "price": "50000000000000000",
+      "reason_is_leader_supplied": true,
+      "rule_window": 600,
+      "ruled_by": "0x36aF507309e99D9f9E0920A59270d7AF04bd35Cb",
+      "rules_close": "2026-10-18T22:44:09Z",
+      "ruling": "minor",
+      "sales_close": "2026-10-18T22:43:41Z",
+      "settled_at": "2026-10-18T22:57:02Z",
+      "sold": 2,
+      "starts_at": "2026-10-18T22:56:41Z",
+      "status": "paid",
+      "title": "Hollow Pines live in Leeds",
+      "why": "Hollow Pines still headline at Brudenell; stand-in drummer and 30-min later doors are minor changes not promised in the description."
+    },
+    {
+      "announced_at": "2026-10-18T22:34:20Z",
+      "capacity": 5,
+      "change": "Mira Kaye has cancelled her tour. The night at the Albert Hall goes ahead as a DJ set by her producer.",
+      "created_at": "2026-10-18T22:31:52Z",
+      "description": "Mira Kaye plays a full live headline set with her band at the Albert Hall, Manchester.",
+      "id": 1,
+      "organiser": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "price": "80000000000000000",
+      "reason_is_leader_supplied": true,
+      "rule_window": 600,
+      "ruled_by": "0xE901774cCF65a921a10beD0C7564f24CCf93cCaf",
+      "rules_close": "2026-10-18T22:44:20Z",
+      "ruling": "material",
+      "sales_close": "2026-10-18T22:43:52Z",
+      "settled_at": "2026-10-18T22:35:40Z",
+      "sold": 2,
+      "starts_at": "2026-10-18T23:11:52Z",
+      "status": "refunded",
+      "title": "Mira Kaye in Manchester",
+      "why": "Mira Kaye's live headline set with her band is replaced by a DJ set from her producer — the named act is gone."
+    },
+    {
+      "announced_at": "2026-10-18T22:34:31Z",
+      "capacity": 5,
+      "change": "The show moves from the Leadmill to the Foundry, Sheffield, on the same night.",
+      "created_at": "2026-10-18T22:32:04Z",
+      "description": "Quiet Harbour play an acoustic set at the Leadmill, Sheffield. One night only.",
+      "id": 2,
+      "organiser": "0x1187a61D11bA0088Cfb9F1a6B6Deea1fb505B068",
+      "price": "30000000000000000",
+      "reason_is_leader_supplied": true,
+      "rule_window": 900,
+      "ruled_by": "",
+      "rules_close": "2026-10-18T22:49:31Z",
+      "ruling": "unruled",
+      "sales_close": "2026-10-18T22:44:04Z",
+      "settled_at": "2026-10-18T22:50:03Z",
+      "sold": 1,
+      "starts_at": "2026-10-18T22:57:04Z",
+      "status": "refunded",
+      "title": "Quiet Harbour in Sheffield",
+      "why": ""
+    }
+  ],
+  "tickets": [
+    {
+      "bought_at": "2026-10-18T22:32:25Z",
+      "holder": "0x36aF507309e99D9f9E0920A59270d7AF04bd35Cb",
+      "id": 0,
+      "refunded": "0",
+      "show": 0
+    },
+    {
+      "bought_at": "2026-10-18T22:32:36Z",
+      "holder": "0xb94d81549E22a21Adbc6E9422dB863caaFE1bFd3",
+      "id": 1,
+      "refunded": "0",
+      "show": 0
+    },
+    {
+      "bought_at": "2026-10-18T22:33:19Z",
+      "holder": "0xE901774cCF65a921a10beD0C7564f24CCf93cCaf",
+      "id": 2,
+      "refunded": "80000000000000000",
+      "show": 1
+    },
+    {
+      "bought_at": "2026-10-18T22:33:30Z",
+      "holder": "0x91Ea46ECd2f5959C18a33B5aa1ba2d4C87997e8E",
+      "id": 3,
+      "refunded": "80000000000000000",
+      "show": 1
+    },
+    {
+      "bought_at": "2026-10-18T22:33:41Z",
+      "holder": "0x6257A5588C3f11a6Cf3d5fA1845A6341Bf1d9039",
+      "id": 4,
+      "refunded": "30000000000000000",
+      "show": 2
+    }
+  ],
+  "balances": {
+    "organiser_before": "950000000000000000",
+    "organiser_after": "1050000000000000000",
+    "ann_before": "900000000000000000",
+    "ann_after": "900000000000000000",
+    "ben_before": "950000000000000000",
+    "ben_after": "950000000000000000",
+    "cal_before": "870000000000000000",
+    "cal_after": "950000000000000000",
+    "dev_before": "920000000000000000",
+    "dev_after": "1000000000000000000",
+    "eve_before": "970000000000000000",
+    "eve_after": "1000000000000000000"
+  },
+  "owed": {
+    "organiser": "100000000000000000",
+    "ann": "0",
+    "ben": "0",
+    "cal": "80000000000000000",
+    "dev": "80000000000000000",
+    "eve": "30000000000000000"
+  },
+  "held_after": "0"
+}

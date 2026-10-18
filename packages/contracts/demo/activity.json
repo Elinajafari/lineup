@@ -1,0 +1,13 @@
+{
+  "show": {
+    "title": "The Lanterns in Bristol",
+    "description": "The Lanterns play a full headline set at the Thekla, Bristol. Doors open at 8 pm.",
+    "price": "20000000000000000",
+    "capacity": 3,
+    "sales_window": 300,
+    "starts_in": 1200,
+    "rule_window": 600
+  },
+  "change": "Doors now open at 8.30 pm instead of 8 pm because of a late soundcheck; The Lanterns still play their full set.",
+  "expected_ruling": "minor"
+}

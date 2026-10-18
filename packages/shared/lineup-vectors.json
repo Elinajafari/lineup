@@ -1,0 +1,240 @@
+{
+  "clean_text": [
+    {
+      "raw": "  the battery\tis \n missing ",
+      "clean": "the battery is missing"
+    },
+    {
+      "raw": "bell\u0007x",
+      "clean": "bell x"
+    },
+    {
+      "raw": "café   ok",
+      "clean": "café ok"
+    },
+    {
+      "raw": "ab",
+      "clean": "a b"
+    },
+    {
+      "raw": "",
+      "clean": ""
+    },
+    {
+      "raw": "\u0001\u0002",
+      "clean": ""
+    },
+    {
+      "raw": "  Tome un comprimido\tdos veces al día ",
+      "clean": "Tome un comprimido dos veces al día"
+    }
+  ],
+  "normalise_choice": [
+    {
+      "raw": "0",
+      "n": 2,
+      "choice": "0"
+    },
+    {
+      "raw": "1",
+      "n": 2,
+      "choice": "1"
+    },
+    {
+      "raw": " [1] ",
+      "n": 2,
+      "choice": "1"
+    },
+    {
+      "raw": "#0",
+      "n": 2,
+      "choice": "0"
+    },
+    {
+      "raw": "(1)",
+      "n": 2,
+      "choice": "1"
+    },
+    {
+      "raw": "2",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "-1",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "as_described",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "0 or 1",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "007",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "1.0",
+      "n": 2,
+      "choice": ""
+    },
+    {
+      "raw": "<0 or 1>",
+      "n": 2,
+      "choice": ""
+    }
+  ],
+  "option_of": [
+    {
+      "choice": "",
+      "order": [
+        "material",
+        "minor"
+      ],
+      "option": ""
+    },
+    {
+      "choice": "0",
+      "order": [
+        "material",
+        "minor"
+      ],
+      "option": "material"
+    },
+    {
+      "choice": "1",
+      "order": [
+        "material",
+        "minor"
+      ],
+      "option": "minor"
+    },
+    {
+      "choice": "",
+      "order": [
+        "minor",
+        "material"
+      ],
+      "option": ""
+    },
+    {
+      "choice": "0",
+      "order": [
+        "minor",
+        "material"
+      ],
+      "option": "minor"
+    },
+    {
+      "choice": "1",
+      "order": [
+        "minor",
+        "material"
+      ],
+      "option": "material"
+    }
+  ],
+  "fold": [
+    {
+      "forward": "",
+      "reverse": "",
+      "folded": ""
+    },
+    {
+      "forward": "",
+      "reverse": "material",
+      "folded": ""
+    },
+    {
+      "forward": "",
+      "reverse": "minor",
+      "folded": ""
+    },
+    {
+      "forward": "material",
+      "reverse": "",
+      "folded": ""
+    },
+    {
+      "forward": "material",
+      "reverse": "material",
+      "folded": "material"
+    },
+    {
+      "forward": "material",
+      "reverse": "minor",
+      "folded": "material"
+    },
+    {
+      "forward": "minor",
+      "reverse": "",
+      "folded": ""
+    },
+    {
+      "forward": "minor",
+      "reverse": "material",
+      "folded": "material"
+    },
+    {
+      "forward": "minor",
+      "reverse": "minor",
+      "folded": "minor"
+    }
+  ],
+  "ruling_sound": [
+    {
+      "ruling": "material",
+      "sound": true
+    },
+    {
+      "ruling": "minor",
+      "sound": true
+    },
+    {
+      "ruling": "",
+      "sound": false
+    },
+    {
+      "ruling": "Minor",
+      "sound": false
+    },
+    {
+      "ruling": "0",
+      "sound": false
+    },
+    {
+      "ruling": "unruled",
+      "sound": false
+    }
+  ],
+  "refunds": [
+    {
+      "ruling": "material",
+      "refunds": true
+    },
+    {
+      "ruling": "minor",
+      "refunds": false
+    },
+    {
+      "ruling": "unruled",
+      "refunds": true
+    },
+    {
+      "ruling": "",
+      "refunds": false
+    }
+  ]
+}

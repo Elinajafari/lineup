@@ -1,0 +1,66 @@
+{
+  "shows": {
+    "pines": {
+      "title": "Hollow Pines live in Leeds",
+      "description": "Hollow Pines play a full headline set at the Brudenell Social Club, Leeds, with support from Ana Silva. Doors open at 7 pm.",
+      "price": "50000000000000000",
+      "capacity": 5,
+      "sales_window": 720,
+      "starts_in": 1500,
+      "rule_window": 600
+    },
+    "kaye": {
+      "title": "Mira Kaye in Manchester",
+      "description": "Mira Kaye plays a full live headline set with her band at the Albert Hall, Manchester.",
+      "price": "80000000000000000",
+      "capacity": 5,
+      "sales_window": 720,
+      "starts_in": 2400,
+      "rule_window": 600
+    },
+    "harbour": {
+      "title": "Quiet Harbour in Sheffield",
+      "description": "Quiet Harbour play an acoustic set at the Leadmill, Sheffield. One night only.",
+      "price": "30000000000000000",
+      "capacity": 5,
+      "sales_window": 720,
+      "starts_in": 1500,
+      "rule_window": 900
+    }
+  },
+  "wrong_price": "50000000000000000",
+  "changes": {
+    "pines": "Hollow Pines' drummer is ill, so a stand-in drummer will play the set with the band, and doors now open at 7.30 pm instead of 7 pm.",
+    "kaye": "Mira Kaye has cancelled her tour. The night at the Albert Hall goes ahead as a DJ set by her producer.",
+    "harbour": "The show moves from the Leadmill to the Foundry, Sheffield, on the same night."
+  },
+  "steps": [
+    {"who": "organiser", "method": "create", "show": "pines", "expect": "ok", "step": "show 0: Hollow Pines, 0.05 GEN a ticket"},
+    {"who": "organiser", "method": "create", "show": "kaye", "expect": "ok", "step": "show 1: Mira Kaye, 0.08 GEN a ticket"},
+    {"who": "organiser", "method": "create", "show": "harbour", "expect": "ok", "step": "show 2: Quiet Harbour, 0.03 GEN a ticket"},
+    {"who": "organiser", "method": "buy", "id": 0, "expect": "refused", "step": "the organiser buys a ticket to its own show"},
+    {"who": "ann", "method": "buy", "id": 0, "expect": "ok", "step": "Ann buys a ticket to Hollow Pines"},
+    {"who": "ben", "method": "buy", "id": 0, "expect": "ok", "step": "Ben buys a ticket to Hollow Pines"},
+    {"who": "ann", "method": "buy", "id": 0, "expect": "refused", "step": "Ann buys a second ticket"},
+    {"who": "cal", "method": "buy", "id": 1, "wrong": true, "expect": "refused", "step": "Cal pays the wrong price for Mira Kaye"},
+    {"who": "cal", "method": "buy", "id": 1, "expect": "ok", "step": "Cal buys a ticket to Mira Kaye"},
+    {"who": "dev", "method": "buy", "id": 1, "expect": "ok", "step": "Dev buys a ticket to Mira Kaye"},
+    {"who": "eve", "method": "buy", "id": 2, "expect": "ok", "step": "Eve buys a ticket to Quiet Harbour"},
+    {"who": "stranger", "method": "announce", "id": 0, "change": "pines", "expect": "refused", "step": "a stranger announces a change"},
+    {"who": "organiser", "method": "announce", "id": 0, "change": "pines", "expect": "ok", "step": "Hollow Pines: a stand-in drummer, doors at 7.30"},
+    {"who": "organiser", "method": "announce", "id": 1, "change": "kaye", "expect": "ok", "step": "Mira Kaye: cancelled, a DJ set instead"},
+    {"who": "organiser", "method": "announce", "id": 2, "change": "harbour", "expect": "ok", "step": "Quiet Harbour: a different venue"},
+    {"who": "stranger", "method": "rule", "id": 0, "expect": "refused", "step": "a stranger asks for a ruling"},
+    {"who": "ann", "method": "rule", "id": 0, "expect": "ok", "step": "Hollow Pines ruled: both orders"},
+    {"who": "cal", "method": "rule", "id": 1, "expect": "ok", "step": "Mira Kaye ruled: both orders"},
+    {"who": "stranger", "method": "settle", "id": 0, "expect": "refused", "step": "Hollow Pines settled before the show"},
+    {"who": "stranger", "method": "settle", "id": 2, "expect": "refused", "step": "Quiet Harbour settled while it may be ruled"},
+    {"who": "eve", "method": "rule", "id": 2, "expect": "refused", "step": "Quiet Harbour ruled after rulings closed", "after": ["rules_close", 2]},
+    {"who": "stranger", "method": "settle", "id": 2, "expect": "ok", "step": "Quiet Harbour settled: unruled, refunded"},
+    {"who": "stranger", "method": "settle", "id": 0, "expect": "ok", "step": "Hollow Pines settled: the organiser paid", "after": ["starts_at", 0]}
+  ],
+  "expected_rulings": [
+    "minor",
+    "material"
+  ]
+}

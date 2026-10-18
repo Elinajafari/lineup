@@ -1,0 +1,105 @@
+{
+  "contract": "packages/contracts/lineup.py",
+  "note": "Generated from the contract source and deployments/studionet.json; packages/contracts/tests/test_shape.py fails if either drifts from this file.",
+  "constructor": {},
+  "writes": {
+    "create": {
+      "params": {
+        "title": "str",
+        "description": "str",
+        "price": "u256",
+        "capacity": "u256",
+        "sales_window": "u256",
+        "starts_in": "u256",
+        "rule_window": "u256"
+      }
+    },
+    "buy": {
+      "params": {
+        "show_id": "u256"
+      },
+      "payable": true
+    },
+    "announce": {
+      "params": {
+        "show_id": "u256",
+        "change": "str"
+      }
+    },
+    "rule": {
+      "params": {
+        "show_id": "u256"
+      }
+    },
+    "settle": {
+      "params": {
+        "show_id": "u256"
+      }
+    }
+  },
+  "views": {
+    "count": {
+      "params": {},
+      "returns": "u256"
+    },
+    "held_total": {
+      "params": {},
+      "returns": "u256"
+    },
+    "status": {
+      "params": {
+        "show_id": "u256"
+      },
+      "returns": "str"
+    },
+    "show": {
+      "params": {
+        "show_id": "u256"
+      },
+      "returns": "dict",
+      "fields": [
+        "announced_at",
+        "capacity",
+        "change",
+        "created_at",
+        "description",
+        "id",
+        "organiser",
+        "price",
+        "reason_is_leader_supplied",
+        "rule_window",
+        "ruled_by",
+        "rules_close",
+        "ruling",
+        "sales_close",
+        "settled_at",
+        "sold",
+        "starts_at",
+        "status",
+        "title",
+        "why"
+      ],
+      "sampled_from_record": [
+        "shows",
+        0
+      ]
+    },
+    "tickets_of": {
+      "params": {
+        "show_id": "u256"
+      },
+      "returns": "dict",
+      "row_fields": [
+        "bought_at",
+        "holder",
+        "id",
+        "refunded",
+        "show"
+      ],
+      "sampled_from_record": [
+        "tickets",
+        0
+      ]
+    }
+  }
+}
